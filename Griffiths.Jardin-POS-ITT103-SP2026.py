@@ -16,7 +16,7 @@ inventory = {
 # this basket holds whatever the cashier scans in
 basket = {}
 
-
+# this shows the main menu options to the cashier
 def show_menu():
     print(" ")
     print("=============================")
@@ -31,7 +31,7 @@ def show_menu():
     print("=============================")
     print(" ")
 
-
+# this prints all items in the store with prices and stock levels
 def show_inventory():
     print(" ")
     print("--- Store Inventory ---")
@@ -45,7 +45,7 @@ def show_inventory():
         print(f"{item:<15} ${details['cost']:.2f}   {details['units']}{alert}")
     print(" ")
 
-
+# this scans an item and adds it to the basket
 def scan_item():
     show_inventory()
     entry = input("Enter item name: ").strip()
@@ -83,7 +83,7 @@ def scan_item():
     print("Scanned:", qty, "x", entry)
     print(" ")
 
-
+# this removes an item from the basket and returns stock
 def void_item():
     if len(basket) == 0:
         print("Basket is empty.")
@@ -99,7 +99,7 @@ def void_item():
     print(entry, "has been voided.")
     print(" ")
 
-
+# this shows everything that's currently in the basket
 def show_basket():
     print(" ")
     print("--- Current Basket ---")
@@ -115,7 +115,7 @@ def show_basket():
     print("-" * 40)
     print(" ")
 
-
+# this prints the final receipt after payment
 def print_receipt(subtotal, tax, discount, total, tendered, change):
     print(" ")
     print("================================")
@@ -141,7 +141,7 @@ def print_receipt(subtotal, tax, discount, total, tendered, change):
     print("================================")
     print(" ")
 
-
+# this calculates the total while applying tax and discount then takes the payment
 def process_payment():
     if not basket:
         print("Nothing scanned yet.")
@@ -187,7 +187,7 @@ def process_payment():
     print("Payment complete. Next customer please.")
     print(" ")
 
-
+# this is the main loop that keeps the register running
 def run_register():
     print("Best Buy POS System - Ready")
     while True:
@@ -212,3 +212,4 @@ def run_register():
 
 run_register()
 
+#I CERTIFY THAT I HAVE NOT GIVEN OR RECEIVED ANY UNAUTHORIZED ASSISTANCE FOR THIS ASSIGNMENT
